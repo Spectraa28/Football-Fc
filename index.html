@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Floodlight FC</title>
+<link rel="stylesheet" href="./style.css">
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js"}}</script>
+</head>
+<body>
+<main>
+  <header class="masthead">
+    <h1>Floodlight <span>FC</span></h1>
+    <div class="score" aria-label="Match score"><span>EMBER</span><strong id="score">0–0</strong><span>TIDE</span></div>
+  </header>
+  <section id="stage" aria-label="Interactive football stadium">
+    <canvas id="pitch" tabindex="0" aria-label="Stadium. Drag to orbit or look. In Free fly, use W A S D to move and Q E to change height."></canvas>
+    <p id="loading" role="status">Lighting the stadium…</p>
+    <div class="shot"><span id="chapter">Floodlights</span></div>
+    <p id="hint">Drag to orbit · Scroll or pinch to zoom</p>
+    <div id="touch-flight" hidden>
+      <button data-fly="KeyW" aria-label="Fly forward">↑</button><button data-fly="KeyA" aria-label="Fly left">←</button>
+      <button data-fly="KeyS" aria-label="Fly backward">↓</button><button data-fly="KeyD" aria-label="Fly right">→</button>
+      <button data-fly="KeyQ" aria-label="Fly down">−</button><button data-fly="KeyE" aria-label="Fly up">+</button>
+    </div>
+  </section>
+  <footer>
+    <div class="transport">
+      <button id="play" type="button">Pause</button>
+      <label class="timeline"><span class="sr-only">Match timeline</span><input id="time" type="range" min="0" max="24" step=".01" value="0"></label>
+      <output id="clock" for="time">00.0 / 24.0</output>
+    </div>
+    <div class="modes" role="group" aria-label="Camera mode">
+      <button type="button" data-mode="director" aria-pressed="true">Director</button>
+      <button type="button" data-mode="orbit" aria-pressed="false">Orbit</button>
+      <button type="button" data-mode="fly" aria-pressed="false">Free fly</button>
+    </div>
+  </footer>
+</main>
+<script type="module" src="./viewer.mjs"></script>
+</body>
+</html>

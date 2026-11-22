@@ -1,0 +1,13 @@
+{
+  "name": "floodlight-fc",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "bake": "node bake.mjs",
+    "start": "node serve.mjs",
+    "test": "node --test match.test.mjs",
+    "render": "node render.mjs"
+  },
+  "dependencies": {"three": "0.180.0"},
+  "devDependencies": {"playwright-core": "1.56.1"}
+}
